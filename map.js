@@ -173,7 +173,7 @@ document.getElementById('picnicTableCheckbox').addEventListener('change', functi
     fetchData('PICNIC TABLE');
 });
 
-let token = 'cc9da7ecbb13c30ec007b3b48eadab681cde4848';
+let token = 'ac75350a93900ca29233716c579e34c3c1d83b4f';
 
 // Function to decode polyline and add it to the map
 function addPolylineToMap(encodedPolyline) {
