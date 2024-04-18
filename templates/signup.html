@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Best Strava Route Planning Site</title>
+        <link rel = "stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}" />
+        
+    </head>
+    <body>
+        <h1>
+            Sign Up
+        </h1>
+        {% if message %}
+        <h1>{{message}}</h1>
+        {%endif%}
+        <form method="POST" action="{{url_for('signup')}}">
+        
+                <h4>Username</h4>
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Username"
+                    required
+                    name="username"
+                />
+
+
+                <label for="exampleInputPassword1">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                    required
+                    name="password1"
+                />
+
+
+
+                <label for="exampleInputPassword2">Confirm Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirm Password"
+                    required
+                    name="password2"
+                />
+                <h3>
+                    Strava Details
+                </h3>
+                <h4>
+                    Username
+                </h4>
+                <input
+                    type = "text"
+                    class = "form-control"
+                    placeholder="Please Enter Your Strava Username"
+                    name = "stravauser"
+                    required
+                />
+                <input
+                    type = "password"
+                    class = "form-control"
+                    placeholder = "Please Enter Your Strava Password"
+                    name = "stravapass"
+                    required
+                />
+
+
+            <button type="submit" class="btn">Sign up</button>
+        </form>
+        
+        <br>
+        <br>
+        <a href = "{{url_for('index')}}">Return to the welcome page</a>
+    </body>
+    
+    
+</html>

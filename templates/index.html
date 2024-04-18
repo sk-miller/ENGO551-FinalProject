@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='stylesheet.css')}}" />
+    
+</head>
+<body>
+    <div id="map"></div>
+    <div id="menu">
+        {% if session['logged_in'] %}
+            <h1>Welcome, {{ session['username'] }}</h1>
+        {% endif %}
+        <h2>Public Facilities</h2>
+        <input type="checkbox" id="waterFountainCheckbox"> Show Water Fountains<br>
+        <input type="checkbox" id="washroomCheckbox"> Show Washrooms<br>
+        <input type="checkbox" id="doggieFountainCheckbox"> Show Doggie Fountains<br>
+        <input type="checkbox" id="showerCheckbox"> Show Showers<br>
+        <input type="checkbox" id="benchCheckbox"> Show Park Benches<br>
+        <input type="checkbox" id="picnicTableCheckbox"> Show Picnic Tables<br>
+        
+        {% if session['logged_in'] %}
+            <h2>Strava Data</h2>
+            <button id="fetchButton">Fetch Activities</button>
+            <br>
+            <br>
+            <br>
+            <button onclick="location.href='{{ url_for('logout') }}'">Logout</button>
+        {% else %}
+            <h2>
+                Join to View Strava Data
+            </h2>
+            <button onclick="location.href='{{ url_for('login') }}'">Login</button>
+            <br>
+            <button onclick="location.href='{{ url_for('signup') }}'">Sign Up</button>
+        {% endif %}
+    </div>
+    <button id="menuButton">&#9776;</button>  
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+    <script src="https://unpkg.com/@mapbox/polyline"></script>
+    <script src="{{url_for('static', filename='map.js')}}"></script>
+
+    
+</body>
+</html>
+
