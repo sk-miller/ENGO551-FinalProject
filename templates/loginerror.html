@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Best Book Review Site</title>
+        <link rel = "stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}" />
+        
+    </head>
+    <body>
+  
+        <h1 style = "color:red">
+            WRONG USERNAME OR PASSWORD
+        </h1>
+        <a href = "{{url_for('login')}}">Please click here if you would like another try</a>       
+    </body>
+    <a href="{{url_for('logout')}}">Logout</a>
+</html>
