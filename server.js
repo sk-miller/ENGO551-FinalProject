@@ -4,8 +4,8 @@ const cors = require('cors'); // import cors module
 const app = express();
 
 app.use(cors()); // use cors middleware
-const client_id = '124795';
-const client_secret = '56f2800692f9b9bba13b77436a83abd0fdcf5037';
+const client_id = '124800';
+const client_secret = '271918a51fa4962cd54a4d4dc71f03426e02fe7e';
 const redirect_uri = 'http://localhost:3000/exchange_token';
 const scope = 'read,activity:read';
 
