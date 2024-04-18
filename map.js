@@ -173,3 +173,32 @@ document.getElementById('picnicTableCheckbox').addEventListener('change', functi
     fetchData('PICNIC TABLE');
 });
 
+let token = 'cc9da7ecbb13c30ec007b3b48eadab681cde4848';
+
+// Function to decode polyline and add it to the map
+function addPolylineToMap(encodedPolyline) {
+    var decodedPolyline = polyline.decode(encodedPolyline);
+    console.log(decodedPolyline);
+    var coordinates = decodedPolyline.map(function(coordinate) {
+        return [coordinate[0], coordinate[1]];
+    });
+    L.polyline(coordinates, {color: 'red'}).addTo(map);
+}
+
+document.getElementById('fetchButton').addEventListener('click', function() {
+    fetch('http://localhost:3000/activities?token='+token)
+        .then(response => response.json())
+        .then(mapData => {
+            for (let data of mapData) {
+                
+                if (data.summary_polyline) {
+                    //console.log(data.summary_polyline);
+                    addPolylineToMap(data.summary_polyline);
+                }
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+
+
