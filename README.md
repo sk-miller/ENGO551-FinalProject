@@ -2,7 +2,7 @@
 
 Thank you for looking at our final project for ENGO551 at the University of Calgary!
 
-# Project: Public Facilities Map
+# Project: User-Focused Route Planning
 
 This project is a web application that displays a map of public facilities in Calgary. The map includes various types of facilities such as drinking fountains, washrooms, doggie fountains, showers, park benches, and picnic tables. The data for these facilities is fetched from the Open Calgary API.
 
@@ -45,7 +45,7 @@ This application uses the following libraries:
 - Axios for making HTTP requests.
 - Cors for handling Cross-Origin Resource Sharing.
 
-## Note
+## Notes
 
 This application is a school project and is not intended for use in a production environment.
 
